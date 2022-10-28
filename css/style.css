@@ -51,7 +51,7 @@ body {
   color: #333;
   background-color: #fff;
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: none;
 }
 
 h1 {
@@ -63,7 +63,7 @@ h1 {
 
 .toggle-nav,
 nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
 }
@@ -121,7 +121,8 @@ main > section {
   height: 100vh;
 }
 main > section div {
-  width: 375px;
+  max-width: 375px;
+  width: 100%;
   margin: 50px;
 }
 main > section div img {
@@ -141,4 +142,31 @@ main div.slides img:first-child {
 }
 main div.slides:hover img {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 775px) {
+  main > section {
+    display: block;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-x: hidden;
+  }
+  main > section div {
+    margin: 0 auto;
+  }
+  main > section div.slides {
+    margin-bottom: 50px;
+    padding-top: 100px;
+    max-height: 345px;
+  }
+  main > section div.slides .img-wrap {
+    position: relative;
+  }
+  main > section div.slides .img-wrap img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+  }
 }/*# sourceMappingURL=style.css.map */

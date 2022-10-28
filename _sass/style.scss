@@ -16,7 +16,7 @@ body {
     color: #333;
     background-color: #fff;
     margin: 0;
-    overflow-x: hidden;
+    overflow-x: none;
 }
 
 h1 {
@@ -28,7 +28,7 @@ h1 {
 
 .toggle-nav,
 nav {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
 }
@@ -67,7 +67,7 @@ a.toggle-nav {
 main {
     transition: transform 0.3s ease-in-out;
     &.open {    
-    transform: translateX(-240px);
+        transform: translateX(-240px);
     }
 }
 main {
@@ -81,7 +81,8 @@ main {
         align-items: center;
         height: 100vh;
         div {
-            width: 375px;
+            max-width: 375px;
+            width: 100%;
             margin: 50px;
             img {
                 max-width: 375px;
@@ -101,6 +102,33 @@ main {
         }
         &:hover img {
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+    }
+}
+
+@media (max-width: 775px) {
+    main > section {
+        display: block;
+        padding-left: 15px;
+        padding-right: 15px;
+        overflow-x: hidden;
+        div {
+            margin: 0 auto;
+            &.slides {
+                margin-bottom: 50px;
+                padding-top: 100px;
+                max-height: 345px;
+                .img-wrap {
+                    position: relative;
+                    img {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
         }
     }
 }
