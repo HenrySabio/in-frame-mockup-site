@@ -125,15 +125,11 @@ main > section div {
   margin: 50px;
 }
 main > section div img {
-  width: 100%;
+  max-width: 375px;
 }
 main div.slides {
-  height: 400px;
+  height: 375px;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
 }
 main div.slides img {
   position: absolute;

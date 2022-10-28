@@ -84,17 +84,13 @@ main {
             width: 375px;
             margin: 50px;
             img {
-                width: 100%;
+                max-width: 375px;
             }
         }
     }
     div.slides {
-        height: 400px;
+        height: 375px;
         position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        vertical-align: middle;
         img {
             position: absolute;
             left: 0;
