@@ -40,6 +40,8 @@ main {
     z-index: 1;
     background-color: #fff;
     min-height: 100vh;
-
-    transform: translateX(240px, 0);
+    transition: transform 0.3s ease-in-out;
+    &.open {    
+        transform: translateX(240px);
+    }
 }
