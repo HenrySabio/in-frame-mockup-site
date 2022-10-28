@@ -1,5 +1,14 @@
 @import 'fonts';
 
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 body {
     font-family: 'Fira Code', monospace;
     font-size: 1.2rem;
@@ -53,17 +62,49 @@ a.toggle-nav {
         top: -3px;
     }
 }
-main {
-    position: relative;
-    z-index: 1;
-    background-color: #fff;
-    min-height: 100vh;
-}
 
 .toggle-nav,
 main {
     transition: transform 0.3s ease-in-out;
     &.open {    
     transform: translateX(-240px);
+    }
+}
+main {
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    min-height: 100vh;
+    > section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        div {
+            width: 375px;
+            margin: 50px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    div.slides {
+        height: 400px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
+        img {
+            position: absolute;
+            left: 0;
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+            &:first-child {
+                z-index: 1;
+            }
+        }
+        &:hover img {
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
     }
 }

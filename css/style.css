@@ -28,6 +28,22 @@
   src: local(""), url("../fonts/fira-code-v21-latin-600.eot?#iefix") format("embedded-opentype"), url("../fonts/fira-code-v21-latin-600.woff2") format("woff2"), url("../fonts/fira-code-v21-latin-600.woff") format("woff"), url("../fonts/fira-code-v21-latin-600.ttf") format("truetype"), url("../fonts/fira-code-v21-latin-600.svg#FiraCode") format("svg");
   /* Legacy iOS */
 }
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 body {
   font-family: "Fira Code", monospace;
   font-size: 1.2rem;
@@ -83,13 +99,6 @@ a.toggle-nav span {
   top: -3px;
 }
 
-main {
-  position: relative;
-  z-index: 1;
-  background-color: #fff;
-  min-height: 100vh;
-}
-
 .toggle-nav,
 main {
   transition: transform 0.3s ease-in-out;
@@ -97,4 +106,43 @@ main {
 .toggle-nav.open,
 main.open {
   transform: translateX(-240px);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  min-height: 100vh;
+}
+main > section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+main > section div {
+  width: 375px;
+  margin: 50px;
+}
+main > section div img {
+  width: 100%;
+}
+main div.slides {
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+main div.slides img {
+  position: absolute;
+  left: 0;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+main div.slides img:first-child {
+  z-index: 1;
+}
+main div.slides:hover img {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }/*# sourceMappingURL=style.css.map */
